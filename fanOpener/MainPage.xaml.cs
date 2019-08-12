@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Gpio;
 using System.Text;
+using System.Threading;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -30,9 +31,11 @@ namespace fanOpener
         private GpioPin pushButton;
         private DispatcherTimer timer;
         private GpioPinValue pushButtonValue;
-        public enum GPIO_State {initializing, noGpio, complete}
+        private bool gpioDone;
+        public enum GPIO_State { initializing, noGpio, complete };
 
         public int[,] Pattern { get; set; } = new int[8, 2] { { 1, 2 }, { 2, 1 }, { 1, 2 }, { 2, 2 }, { 1, 2 }, { 1, 1 }, { 2, 2 }, { 1, 2 } };
+        public bool GpioDone { get => gpioDone; set => gpioDone = value; }
 
         public MainPage()
         {
@@ -53,17 +56,25 @@ namespace fanOpener
             timer.Tick += Timer_Tick;
             timer.Start();
         }
-        
-private void GpioStat(string option)
+
+        public void SetGpioState(GPIO_State selector)
         {
-            GPIO_State _State
+            switch (selector)
             {
-                
-
+                case GPIO_State.initializing:
+                    GpioStatus.Text = "initializing GPIO";
+                    break;
+                case GPIO_State.noGpio:
+                    GpioStatus.Text = "There is no GPIO controller on this device.";
+                    break;
+                case GPIO_State.complete:
+                    GpioStatus.Text = "GPIO pin initialized correctly.";
+                    break;
                 default:
-
- break;
+                    break;
             }
+        }
+
             GpioStatus.Text = "There is no GPIO controller on this device.";
                 return;
             }

@@ -30,6 +30,7 @@ namespace fanOpener
         private GpioPin pushButton;
         private DispatcherTimer timer;
         private GpioPinValue pushButtonValue;
+        public enum GPIO_State {initializing, noGpio, complete}
 
         public int[,] Pattern { get; set; } = new int[8, 2] { { 1, 2 }, { 2, 1 }, { 1, 2 }, { 2, 2 }, { 1, 2 }, { 1, 1 }, { 2, 2 }, { 1, 2 } };
 
@@ -53,14 +54,17 @@ namespace fanOpener
             timer.Start();
         }
         
-private void InitGPIO()
+private void GpioStat(string option)
         {
-            var gpio = GpioController.GetDefault();
-
-            if (gpio == null)
+            GPIO_State _State
             {
-                pinCW = null;
-                GpioStatus.Text = "There is no GPIO controller on this device.";
+                
+
+                default:
+
+ break;
+            }
+            GpioStatus.Text = "There is no GPIO controller on this device.";
                 return;
             }
             pushButton = gpio.OpenPin(PB_PIN);
@@ -100,111 +104,8 @@ private void InitGPIO()
 
             PatternStatus.Text = Sb.ToString();
         }
-        private int[,] Generate_Pattern(int[,] pattern)
-        {
-            Random randNum = new Random();
-            Array.Clear(pattern, 0, pattern.Length);
-            for(int i = 0; i<=3; i++)
-            {
-                pattern[i, 0] = randNum.Next(1, patOptions);
-                pattern[i, 1] = randNum.Next(1, 2);
-            }
-            //PrintArray(pattern);
-            return pattern;
-        }
-       public class MotorObject
-        {
-
-            private bool enabled;
-            private string name;
-            private GpioPin pinCW;
-            private GpioPin pinCCW;
-            public void InitGPIO(int AIN1, int AIN2)
-            {
-
-                pinCW = gpio.OpenPin(AIN1);
-                pinCCW = gpio.OpenPin(AIN2);
-            }
-            public bool Enabled { get => enabled; set => enabled = value; }
-            public string Name { get => name; set => name = value; }
-        }
-        public class Wing:MotorObject
-        {
-            private string location;
-            private int status;
-            private int openDur;
-            public Wing(string location)
-            {
-                this.Location = location;
-            }
-
-            public string Location { get => location; set => location = value; }
-            public int Status { get => status; set => status = value; }
-            public int OpenDur { get => openDur; set => openDur = value; }
-        }
-        private void PlayPattern(int[,] pattern)
-        {
-            for (int i = 0; i < pattern.Length; i++)
-            {
-                if (pattern[i, 1] == 1)
-                {
-                    switch (pattern[i, 0])
-                    {
-                        case 1:
-                            WingFlap(shortFlap, left);
-                                break;
-                        case 2:
-                            WingFlap(medFlap, left);
-                                break;
-                        case 3:
-                            WingFlap(longFlap, left);
-                                break;
-                        default:
-                            break;
-                    }
-
-                }
-                if (pattern[i, 1] == 2)
-                {
-                    switch (pattern[i, 0])
-                    {
-                        case 1:
-                            WingFlap(shortFlap, right);
-                            break;
-                        case 2:
-                            WingFlap(medFlap, right);
-                            break;
-                        case 3:
-                            WingFlap(longFlap, right);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                if (pattern[i, 1] == 3)
-                {
-                    switch (pattern[i, 0])
-                    {
-                        case 1:
-                            WingFlap(shortFlap, both);
-                            break;
-                        case 2:
-                            WingFlap(medFlap, both);
-                            break;
-                        case 3:
-                            WingFlap(longFlap, both);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                else
-                {
-                    break;
-                }
-            }
-
-        }
+        
+        
 
         private void FlipLED()
         {

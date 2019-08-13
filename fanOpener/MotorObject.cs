@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace fanOpener
 {
-        public class MotorObject
+        public class MotorObject: Cicada
         {
         GpioController controller;
         MainPage main;

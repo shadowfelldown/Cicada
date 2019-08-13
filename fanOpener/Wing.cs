@@ -7,6 +7,9 @@ using System.Threading;
 
 namespace fanOpener
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Wing : MotorObject
     {
         private string location;
@@ -23,11 +26,12 @@ namespace fanOpener
         public Wing(string location, int pinCW, int pinCCW) : base(pinCW, pinCCW)
         {
             this.Location = location;
-            Name = location + " Wing";
+            this.Name = location + " Wing";
         }
 
         public string Location { get => location; set => location = value; }
         public int Status { get => status; set => status = value; }
+
         public void flap(Duration duration)
             //TODO: Override the class in motorobject
         {
@@ -59,6 +63,7 @@ namespace fanOpener
                     PinCW.Write(GpioPinValue.High);
                     PinCCW.Write(GpioPinValue.Low);
                     Thread.Sleep((int)Duration.longF);
+                    break;
                 default:
                     break;
             }

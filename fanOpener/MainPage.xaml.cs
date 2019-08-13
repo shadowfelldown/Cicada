@@ -24,6 +24,8 @@ namespace fanOpener
     {
         private const int AIN1 = 13;
         private const int AIN2 = 12;
+        private const int BIN1 = 13;
+        private const int BIN2 = 13;
         private const int PB_PIN = 5;
         private const int patOptions = 3;
         private GpioPin pinCW;
@@ -34,18 +36,16 @@ namespace fanOpener
         private bool gpioDone;
         public enum GPIO_State { initializing, noGpio, complete };
 
-        public int[,] Pattern { get; set; } = new int[8, 2] { { 1, 2 }, { 2, 1 }, { 1, 2 }, { 2, 2 }, { 1, 2 }, { 1, 1 }, { 2, 2 }, { 1, 2 } };
         public bool GpioDone { get => gpioDone; set => gpioDone = value; }
 
         public MainPage()
         {
             InitializeComponent();
             //NewTimer(500);
-
             Unloaded += MainPage_Unloaded;
-
-            InitGPIO();
-            Generate_Pattern(Pattern);
+            new Cicada(Cicada.Config.OneWing);
+            //InitGPIO();
+            //Generate_Pattern(Pattern);
             PrintArray(Pattern);
 
         }
@@ -53,7 +53,7 @@ namespace fanOpener
         {
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(duration);
-            timer.Tick += Timer_Tick;
+            //timer.Tick += Timer_Tick;
             timer.Start();
         }
 
@@ -73,21 +73,6 @@ namespace fanOpener
                 default:
                     break;
             }
-        }
-
-            GpioStatus.Text = "There is no GPIO controller on this device.";
-                return;
-            }
-            pushButton = gpio.OpenPin(PB_PIN);
-            pinCW = gpio.OpenPin(AIN1);
-            pinCCW = gpio.OpenPin(AIN2);
-
-            pushButton.SetDriveMode(GpioPinDriveMode.Input);
-            pinCW.Write(GpioPinValue.Low);
-            pinCW.SetDriveMode(GpioPinDriveMode.Output);
-            pinCCW.Write(GpioPinValue.Low);
-            pinCCW.SetDriveMode(GpioPinDriveMode.Output);
-            GpioStatus.Text = "GPIO pin initialized correctly.";
         }
 
         private void MainPage_Unloaded(object sender, object args)
@@ -115,26 +100,5 @@ namespace fanOpener
 
             PatternStatus.Text = Sb.ToString();
         }
-        
-        
-
-        private void FlipLED()
-        {
-            pushButtonValue = pushButton.Read();
-            if (pushButtonValue == GpioPinValue.High)
-            {
-                pinCW.Write(GpioPinValue.High);
-            }
-            else if (pushButtonValue == GpioPinValue.Low)
-            {
-                pinCW.Write(GpioPinValue.Low);
-            }
-        }
-
-        private void Timer_Tick(object sender, object e)
-        {
-            FlipLED();
-        }
-
     }
 }

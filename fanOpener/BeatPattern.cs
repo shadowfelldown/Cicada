@@ -4,10 +4,13 @@
 
 namespace fanOpener
 {
-        public class BeatPattern
+        public class BeatPattern : Cicada
         {
-            private int[,] Generate_Pattern(int[,] pattern)
+        //TODO: Figure out how to make it so that beatPattern does not require inherriting the enum from cicada.
+        public int[,] Pattern { get; set; } = new int[8, 2] { { 1, 2 }, { 2, 1 }, { 1, 2 }, { 2, 2 }, { 1, 2 }, { 1, 1 }, { 2, 2 }, { 1, 2 } };
+        private int[,] Generate_Pattern(int[,] pattern)
             {
+                LeftWing =
                 Random randNum = new Random();
                 Array.Clear(pattern, 0, pattern.Length);
                 for (int i = 0; i <= 3; i++)
@@ -27,13 +30,13 @@ namespace fanOpener
                         switch (pattern[i, 0])
                         {
                             case 1:
-                                WingFlap(shortFlap, left);
+                                LeftWing.flap(Wing.Duration.shortF);
                                 break;
                             case 2:
-                                WingFlap(medFlap, left);
+                                 LeftWing.flap(Wing.Duration.mediumF);
                                 break;
                             case 3:
-                                WingFlap(longFlap, left);
+                                LeftWing.flap(Wing.Duration.longF);
                                 break;
                             default:
                                 break;
@@ -44,31 +47,34 @@ namespace fanOpener
                     {
                         switch (pattern[i, 0])
                         {
-                            case 1:
-                                WingFlap(shortFlap, right);
-                                break;
-                            case 2:
-                                WingFlap(medFlap, right);
-                                break;
-                            case 3:
-                                WingFlap(longFlap, right);
-                                break;
-                            default:
-                                break;
-                        }
+                        case 1:
+                            RightWing.flap(Wing.Duration.shortF);
+                            break;
+                        case 2:
+                            RightWing.flap(Wing.Duration.mediumF);
+                            break;
+                        case 3:
+                            RightWing.flap(Wing.Duration.longF);
+                            break;
+                        default:
+                            break;
+                    }
                     }
                     if (pattern[i, 1] == 3)
                     {
                         switch (pattern[i, 0])
                         {
                             case 1:
-                                WingFlap(shortFlap, both);
+                                RightWing.flap(Wing.Duration.shortF);
+                                LeftWing.flap(Wing.Duration.shortF);
                                 break;
                             case 2:
-                                WingFlap(medFlap, both);
+                                RightWing.flap(Wing.Duration.mediumF);
+                                LeftWing.flap(Wing.Duration.mediumF);
                                 break;
                             case 3:
-                                WingFlap(longFlap, both);
+                                RightWing.flap(Wing.Duration.longF);
+                                LeftWing.flap(Wing.Duration.longF);
                                 break;
                             default:
                                 break;

@@ -8,9 +8,9 @@ namespace fanOpener
         {
         //TODO: Figure out how to make it so that beatPattern does not require inherriting the enum from cicada.
         public int[,] Pattern { get; set; } = new int[8, 2] { { 1, 2 }, { 2, 1 }, { 1, 2 }, { 2, 2 }, { 1, 2 }, { 1, 1 }, { 2, 2 }, { 1, 2 } };
+        public int patOptions = 2;
         private int[,] Generate_Pattern(int[,] pattern)
             {
-                LeftWing =
                 Random randNum = new Random();
                 Array.Clear(pattern, 0, pattern.Length);
                 for (int i = 0; i <= 3; i++)

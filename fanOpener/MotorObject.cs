@@ -21,6 +21,7 @@ namespace fanOpener
         private GpioPin pinCCW;
         public MotorObject(int CWpin, int CCWpin)
         {
+            this.main = MainPage
             this.CCWpin = CCWpin;
             this.CWpin = CWpin;
             initialize();
@@ -64,7 +65,7 @@ namespace fanOpener
             pinCCW.SetDriveMode(GpioPinDriveMode.Output);
             pinCW.SetDriveMode(GpioPinDriveMode.Output);
         }
-            public bool Enabled { get => enabled; set => enabled = value; }
+            public bool MotorEnabled { get => enabled; set => enabled = value; }
             public string Name { get => name; set => name = value; }
         public GpioPin PinCW { get => pinCW; set => pinCW = value; }
         public GpioPin PinCCW { get => pinCCW; set => pinCCW = value; }

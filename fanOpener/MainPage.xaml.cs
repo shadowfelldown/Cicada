@@ -28,11 +28,7 @@ namespace fanOpener
         private const int BIN2 = 13;
         private const int PB_PIN = 5;
         private const int patOptions = 3;
-        private GpioPin pinCW;
-        private GpioPin pinCCW;
-        private GpioPin pushButton;
         private DispatcherTimer timer;
-        private GpioPinValue pushButtonValue;
         private bool gpioDone;
         public enum GPIO_State { initializing, noGpio, complete };
 
@@ -43,10 +39,10 @@ namespace fanOpener
             InitializeComponent();
             //NewTimer(500);
             Unloaded += MainPage_Unloaded;
-            new Cicada(Cicada.Config.OneWing);
+            new Cicada();
             //InitGPIO();
             //Generate_Pattern(Pattern);
-            PrintArray(Pattern);
+            //PrintArray(Pattern);
 
         }
         private void NewTimer(int duration)
@@ -77,9 +73,8 @@ namespace fanOpener
 
         private void MainPage_Unloaded(object sender, object args)
         {
-            pinCW.Dispose();
-            pinCCW.Dispose();
-            pushButton.Dispose();
+            MotorObject.pinCW.Dispose();
+            MotorObject.pinCCW.Dispose();
         }
         public void PrintArray(int[,] array)
         {

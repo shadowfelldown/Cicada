@@ -4,10 +4,19 @@
 
 namespace fanOpener
 {
-        public class BeatPattern : Cicada
+        public class BeatPattern
         {
         //TODO: Figure out how to make it so that beatPattern does not require inherriting the enum from cicada.
         public int[,] Pattern { get; set; } = new int[8, 2] { { 1, 2 }, { 2, 1 }, { 1, 2 }, { 2, 2 }, { 1, 2 }, { 1, 1 }, { 2, 2 }, { 1, 2 } };
+
+        public Cicada Cicada
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public int patOptions = 2;
         private int[,] Generate_Pattern(int[,] pattern)
             {

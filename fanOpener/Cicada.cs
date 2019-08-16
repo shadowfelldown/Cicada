@@ -16,9 +16,9 @@ namespace fanOpener
         public bool Enabled { get; set; }
         public Wing LeftWing;
         public Wing RightWing;
-       public Cicada()
+       public Cicada(Config config)
         {
-            makeObjects(Config.OneWing);
+            makeObjects(config);
         }
         private void makeObjects(Config config)
         {

@@ -39,7 +39,7 @@ namespace fanOpener
             InitializeComponent();
             //NewTimer(500);
             Unloaded += MainPage_Unloaded;
-            new Cicada();
+            new Cicada(Config.OneWing);
             //InitGPIO();
             //Generate_Pattern(Pattern);
             //PrintArray(Pattern);
@@ -73,8 +73,7 @@ namespace fanOpener
 
         private void MainPage_Unloaded(object sender, object args)
         {
-            MotorObject.pinCW.Dispose();
-            MotorObject.pinCCW.Dispose();
+
         }
         public void PrintArray(int[,] array)
         {

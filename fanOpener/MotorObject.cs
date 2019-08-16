@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace fanOpener
 {
-        public class MotorObject: Cicada
+        public class MotorObject
         {
         GpioController controller;
         MainPage main;
@@ -21,7 +21,6 @@ namespace fanOpener
         private GpioPin pinCCW;
         public MotorObject(int CWpin, int CCWpin)
         {
-            this.main = MainPage
             this.CCWpin = CCWpin;
             this.CWpin = CWpin;
             initialize();

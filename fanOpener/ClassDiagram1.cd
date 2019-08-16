@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="fanOpener.MotorObject">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAoAAACAAAEAAIGAAA4AEAAEAEAAAgAAAAgAAAQ=</HashCode>
+      <FileName>MotorObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fanOpener.Wing" Collapsed="true">
+    <Position X="7.5" Y="7.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="fanOpener.Wing.Duration" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Wing.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAAAAAAAAQIAAAACAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Wing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fanOpener.Cicada">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAEAAAACAAAIAAAAAAAADAAAAAAAAAAAAAAADAAAA=</HashCode>
+      <FileName>Cicada.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fanOpener.BeatPattern">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAgAAAAACQAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>BeatPattern.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cicada" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="fanOpener.Config">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cicada.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

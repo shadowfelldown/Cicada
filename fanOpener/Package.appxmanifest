@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="d9979f0d-06be-4192-ad17-66de8e578a8b"
+    Name="Cicada-Main"
     Publisher="CN=shado"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="d9979f0d-06be-4192-ad17-66de8e578a8b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>fanOpener</DisplayName>
+    <DisplayName>Cicada (RPi3)</DisplayName>
     <PublisherDisplayName>shado</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -45,5 +45,6 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
+    <DeviceCapability Name="microphone"/>
   </Capabilities>
 </Package>

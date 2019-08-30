@@ -10,7 +10,7 @@
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>d9979f0d-06be-4192-ad17-66de8e578a8b</PackageIdentityName>
     <PackageIdentityPublisher>CN=shado</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\obj\ARM\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,25 +18,25 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\bin\ARM\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>800F7C3A21E6D21EE5726C153E3E05B7E6E953C5BE41005068885111E30FFEB0</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>d9979f0d-06be-4192-ad17-66de8e578a8b_1.0.0.0_arm__eqa0p8g93fzca</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>d9979f0d-06be-4192-ad17-66de8e578a8b_eqa0p8g93fzca!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>d9979f0d-06be-4192-ad17-66de8e578a8b</RegisteredPackageID>
+    <LayoutDir>C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\ARM\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>0117F6E2E2E65AB654A065C5602B653298FEAE43FFD5393BCD3FB50ABC079B6F</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>Cicada-Main_1.0.0.0_arm__eqa0p8g93fzca</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>Cicada-Main_eqa0p8g93fzca!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>Cicada-Main</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=shado</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-12T01:28:11.637</Modified>
+      <Modified>2019-08-18T22:47:56.134</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\bin\ARM\Debug\fanOpener.exe">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\ARM\Debug\fanOpener.exe">
       <PackagePath>entrypoint\fanOpener.exe</PackagePath>
-      <Modified>2019-08-12T01:28:11.251</Modified>
+      <Modified>2019-08-18T22:47:53.502</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -494,67 +494,67 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2018-10-23T05:33:40.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2019-08-09T23:52:06.276</Modified>
+      <Modified>2019-08-12T05:12:24.096</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2019-08-07T20:14:32.235</Modified>
+      <Modified>2019-08-12T05:12:24.085</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-07T20:14:32.235</Modified>
+      <Modified>2019-08-12T05:12:24.086</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-07T20:14:32.235</Modified>
+      <Modified>2019-08-12T05:12:24.088</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-07T20:14:32.235</Modified>
+      <Modified>2019-08-12T05:12:24.089</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-07T20:14:32.235</Modified>
+      <Modified>2019-08-12T05:12:24.089</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-07T20:14:32.235</Modified>
+      <Modified>2019-08-12T05:12:24.090</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-07T20:14:32.235</Modified>
+      <Modified>2019-08-12T05:12:24.091</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\bin\ARM\Debug\fanOpener.xr.xml">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\ARM\Debug\fanOpener.xr.xml">
       <PackagePath>fanOpener.xr.xml</PackagePath>
-      <Modified>2019-08-12T01:28:11.061</Modified>
+      <Modified>2019-08-12T05:12:25.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\bin\ARM\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\ARM\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-08-12T01:28:11.069</Modified>
+      <Modified>2019-08-18T22:47:53.210</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\bin\ARM\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\ARM\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-08-12T01:28:11.070</Modified>
+      <Modified>2019-08-18T22:47:53.210</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2018-10-23T04:44:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-08-12T01:09:15.713</Modified>
+      <Modified>2019-08-18T22:47:55.236</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\fanOpener\fanOpener\bin\ARM\Debug\Core\fanOpener.exe">
+    <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\ARM\Debug\Core\fanOpener.exe">
       <PackagePath>fanOpener.exe</PackagePath>
-      <Modified>2019-08-12T01:28:11.633</Modified>
+      <Modified>2019-08-18T22:47:56.122</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

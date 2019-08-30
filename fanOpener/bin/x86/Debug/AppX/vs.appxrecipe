@@ -19,10 +19,10 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>5A58A3D24FD839CA3E25880560065B6129D8E5AEE9DC9C422EF3C4B66AC2DFCD</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>d9979f0d-06be-4192-ad17-66de8e578a8b_1.0.0.0_x86__eqa0p8g93fzca</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>d9979f0d-06be-4192-ad17-66de8e578a8b_eqa0p8g93fzca!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>d9979f0d-06be-4192-ad17-66de8e578a8b</RegisteredPackageID>
+    <RegisteredManifestChecksum>6DE2E7B42EA60A194590D0635DE05EE66D2620A577D6842126A3B4577B7EC2A3</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>Cicada-Main_1.0.0.0_x86__eqa0p8g93fzca</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>Cicada-Main_eqa0p8g93fzca!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>Cicada-Main</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=shado</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-16T04:15:51.962</Modified>
+      <Modified>2019-08-30T04:21:53.334</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\x86\Debug\fanOpener.exe">
       <PackagePath>entrypoint\fanOpener.exe</PackagePath>
-      <Modified>2019-08-16T04:15:49.784</Modified>
+      <Modified>2019-08-30T04:21:47.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -542,11 +542,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-08-16T04:15:49.561</Modified>
+      <Modified>2019-08-30T04:21:52.998</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-08-16T04:15:49.561</Modified>
+      <Modified>2019-08-30T04:21:52.998</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -554,11 +554,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-08-16T04:15:51.258</Modified>
+      <Modified>2019-08-30T03:59:19.471</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\shado\Dropbox\Projects\Personal - Cicadas\Visual Studio\Cicada\fanOpener\bin\x86\Debug\Core\fanOpener.exe">
       <PackagePath>fanOpener.exe</PackagePath>
-      <Modified>2019-08-16T04:15:51.949</Modified>
+      <Modified>2019-08-30T04:21:53.330</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

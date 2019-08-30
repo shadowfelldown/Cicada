@@ -9,14 +9,6 @@ namespace fanOpener
         //TODO: Figure out how to make it so that beatPattern does not require inherriting the enum from cicada.
         public int[,] Pattern { get; set; } = new int[8, 2] { { 1, 2 }, { 2, 1 }, { 1, 2 }, { 2, 2 }, { 1, 2 }, { 1, 1 }, { 2, 2 }, { 1, 2 } };
 
-        public Cicada Cicada
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public int patOptions = 2;
         private int[,] Generate_Pattern(int[,] pattern)
             {
@@ -35,35 +27,35 @@ namespace fanOpener
                 for (int i = 0; i < pattern.Length; i++)
                 {
                     if (pattern[i, 1] == 1)
+                {
+                    switch (pattern[i, 0])
                     {
-                        switch (pattern[i, 0])
-                        {
-                            case 1:
-                                LeftWing.flap(Wing.Duration.shortF);
-                                break;
-                            case 2:
-                                 LeftWing.flap(Wing.Duration.mediumF);
-                                break;
-                            case 3:
-                                LeftWing.flap(Wing.Duration.longF);
-                                break;
-                            default:
-                                break;
-                        }
-
+                        case 1:
+                            Cicada.LeftWing.flap(Wing.shortF);
+                            break;
+                        case 2:
+                            Cicada.LeftWing.flap(Wing.mediumF);
+                            break;
+                        case 3:
+                            Cicada.LeftWing.flap(Wing.longF);
+                            break;
+                        default:
+                            break;
                     }
-                    if (pattern[i, 1] == 2)
+
+                }
+                if (pattern[i, 1] == 2)
                     {
                         switch (pattern[i, 0])
                         {
                         case 1:
-                            RightWing.flap(Wing.Duration.shortF);
+                            Cicada.RightWing.flap(Wing.shortF);
                             break;
                         case 2:
-                            RightWing.flap(Wing.Duration.mediumF);
+                            Cicada.RightWing.flap(Wing.mediumF);
                             break;
                         case 3:
-                            RightWing.flap(Wing.Duration.longF);
+                            Cicada.RightWing.flap(Wing.longF);
                             break;
                         default:
                             break;
@@ -74,16 +66,16 @@ namespace fanOpener
                         switch (pattern[i, 0])
                         {
                             case 1:
-                                RightWing.flap(Wing.Duration.shortF);
-                                LeftWing.flap(Wing.Duration.shortF);
+                                Cicada.RightWing.flap(Wing.shortF);
+                                Cicada.LeftWing.flap(Wing.shortF);
                                 break;
                             case 2:
-                                RightWing.flap(Wing.Duration.mediumF);
-                                LeftWing.flap(Wing.Duration.mediumF);
+                                Cicada.RightWing.flap(Wing.mediumF);
+                                Cicada.LeftWing.flap(Wing.mediumF);
                                 break;
                             case 3:
-                                RightWing.flap(Wing.Duration.longF);
-                                LeftWing.flap(Wing.Duration.longF);
+                                Cicada.RightWing.flap(Wing.longF);
+                                Cicada.LeftWing.flap(Wing.longF);
                                 break;
                             default:
                                 break;
@@ -96,5 +88,6 @@ namespace fanOpener
                 }
 
             }
+            
         }
-}
+    }

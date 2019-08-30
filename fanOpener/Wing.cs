@@ -15,15 +15,11 @@ namespace fanOpener
         private string location;
         private int status;
         private const int openDur = 500;
+        public static Duration shortF = new Duration(openDur / 3, "shortF");
+        public static Duration mediumF = new Duration(openDur / 2, "mediumF");
+        public static Duration longF= new Duration(openDur, "longF");
 
-        public enum Duration
-        {
-            shortF = (openDur / 3),
-            mediumF = (openDur / 2),
-            longF = openDur
-        }
-
-        public Wing(string location, int pinCW, int pinCCW) : base(pinCW, pinCCW)
+        public Wing(string location, AvailableGpioPin availableCCW, AvailableGpioPin availabeCW) : base(availableCCW, availabeCW)
         {
             this.Location = location;
             this.Name = location + " Wing";
@@ -31,42 +27,48 @@ namespace fanOpener
 
         public string Location { get => location; set => location = value; }
         public int Status { get => status; set => status = value; }
-
-        public void flap(Duration duration)
-            //TODO: Override the class in motorobject
+        public override void Rotate(Duration duration)
         {
-            switch (duration)
             {
-                case Duration.shortF:
-                    PinCW.Write(GpioPinValue.High);
-                    PinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep((int)Duration.shortF);
+                if (duration == shortF)
+                {
+                    pinCW.Write(GpioPinValue.High);
+                    pinCCW.Write(GpioPinValue.Low);
+                    Thread.Sleep(Duration.shortF.Value);
                     //TODO: replace this sleep with
-                    PinCW.Write(GpioPinValue.High);
-                    PinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep((int)Duration.shortF);
-                    break;
-                case Duration.mediumF:
-                    PinCW.Write(GpioPinValue.High);
-                    PinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep((int)Duration.mediumF);
+                    pinCW.Write(GpioPinValue.High);
+                    pinCCW.Write(GpioPinValue.Low);
+                    Thread.Sleep(Duration.shortF.Value);
+                }
+                if (duration == mediumF)
+                {
+                    pinCW.Write(GpioPinValue.High);
+                    pinCCW.Write(GpioPinValue.Low);
+                    Thread.Sleep(Duration.mediumF.Value);
                     //TODO: replace this sleep with
-                    PinCW.Write(GpioPinValue.High);
-                    PinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep((int)Duration.mediumF);
-                    break;
-                case Duration.longF:
-                    PinCW.Write(GpioPinValue.High);
-                    PinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep((int)Duration.longF);
+                    pinCW.Write(GpioPinValue.High);
+                    pinCCW.Write(GpioPinValue.Low);
+                    Thread.Sleep(Duration.mediumF.Value);
+                }
+                if (duration == longF)
+                {
+                    pinCW.Write(GpioPinValue.High);
+                    pinCCW.Write(GpioPinValue.Low);
+                    Thread.Sleep(Duration.longF.Value);
                     //TODO: replace this sleep with
-                    PinCW.Write(GpioPinValue.High);
-                    PinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep((int)Duration.longF);
-                    break;
-                default:
-                    break;
+                    pinCW.Write(GpioPinValue.High);
+                    pinCCW.Write(GpioPinValue.Low);
+                    Thread.Sleep(Duration.longF.Value);
+                }
+                else
+                {
+                    return;
+                }
             }
+        }
+        public void flap(Duration duration)
+        {
+            Rotate(duration);
         }
     }
 }

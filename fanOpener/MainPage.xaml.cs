@@ -20,6 +20,7 @@ using System.Threading;
 
 namespace fanOpener
 {
+    public enum GPIO_State { initializing, noGpio, complete };
     public sealed partial class MainPage : Page
     {
         private const int AIN1 = 13;
@@ -28,43 +29,37 @@ namespace fanOpener
         private const int BIN2 = 13;
         private const int PB_PIN = 5;
         private const int patOptions = 3;
-        private DispatcherTimer timer;
-        private bool gpioDone;
-        public enum GPIO_State { initializing, noGpio, complete };
+        private static bool gpioDone;
+        public static TextBlock GpioStatBlock { get; set; }
+        public static bool GpioDone { get => gpioDone; set => gpioDone = value; }
 
-        public bool GpioDone { get => gpioDone; set => gpioDone = value; }
+
 
         public MainPage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+            GpioStatBlock = this.GpioStatus;
             //NewTimer(500);
             Unloaded += MainPage_Unloaded;
-            new Cicada(Config.OneWing);
+            var cicada = new Cicada(Config.OneWing);
             //InitGPIO();
             //Generate_Pattern(Pattern);
             //PrintArray(Pattern);
 
         }
-        private void NewTimer(int duration)
-        {
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(duration);
-            //timer.Tick += Timer_Tick;
-            timer.Start();
-        }
 
-        public void SetGpioState(GPIO_State selector)
+        public static void SetGpioState(GPIO_State selector)
         {
             switch (selector)
             {
                 case GPIO_State.initializing:
-                    GpioStatus.Text = "initializing GPIO";
+                    GpioStatBlock.Text = "initializing GPIO";
                     break;
                 case GPIO_State.noGpio:
-                    GpioStatus.Text = "There is no GPIO controller on this device.";
+                    GpioStatBlock.Text = "There is no GPIO controller on this device.";
                     break;
                 case GPIO_State.complete:
-                    GpioStatus.Text = "GPIO pin initialized correctly.";
+                    GpioStatBlock.Text = "GPIO pin initialized correctly.";
                     break;
                 default:
                     break;

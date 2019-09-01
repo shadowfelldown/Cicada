@@ -33,21 +33,28 @@ namespace fanOpener
         private static bool gpioDone;
         public static TextBlock StatusLineTL { get; set; }
         public static TextBlock StatusLineTR { get; set; }
+        public static Visibility LeftPatternVis { get; set; }
+        public static Visibility RightPatternVis { get; set; }
         public static TextBlock ErrorBlock01 { get; set; }
+
         public static bool GpioDone { get => gpioDone; set => gpioDone = value; }
 
 
 
         public MainPage()
         {
-
             this.InitializeComponent();
             StatusLineTL = this.StatLine01;
             StatusLineTR = this.StatLine02;
             StatusLineTR = this.ErrBlock01;
+            LeftPatternVis = this.LeftPatternGrid.Visibility;
+            RightPatternVis = this.RightPatternGrid.Visibility;
+            var RightPattern = this.RightPatternString;
+            var LeftPattern = this.LeftPatternString;
             //NewTimer(500);
             Unloaded += MainPage_Unloaded;
             var cicada = new Cicada(Config.OneWing);
+
             //InitGPIO();
             //Generate_Pattern(Pattern);
             //PrintArray(Pattern);
@@ -102,7 +109,7 @@ namespace fanOpener
                 }
             }
 
-            PatternStatus.Text = Sb.ToString();
+            LeftPatternString.Text = Sb.ToString();
         }
     }
 }

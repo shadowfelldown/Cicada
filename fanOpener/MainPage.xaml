@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="GpioStatus" Text="Waiting to initialize GPIO..." Margin="10,50,10,10" TextAlignment="Center" FontSize="26.667" />
+            <TextBlock x:Name="StatBlock1" Text="Waiting to initialize GPIO..." Margin="10,50,10,10" TextAlignment="Center" FontSize="26.667" />
             <TextBlock x:Name="PatternStatus" TextWrapping="Wrap"  Text="pattern will print here" Margin="10,50,10,10" TextAlignment="Center" FontSize="26.667" Width="568" Height="153" />
         </StackPanel>
     </Grid>

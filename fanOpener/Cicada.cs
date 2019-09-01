@@ -76,6 +76,7 @@ namespace fanOpener
         {
             beatPattern = new BeatPattern();
             makeObjects(config);
+            MainPage.SetStatusMessage("Cicada created, Config=" + config.ToString("g"));
         }
         private void makeObjects(Config config)
         {

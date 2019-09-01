@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Gpio;
 using System.Text;
 using System.Threading;
+using Windows.Devices.Display;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -30,15 +31,20 @@ namespace fanOpener
         private const int PB_PIN = 5;
         private const int patOptions = 3;
         private static bool gpioDone;
-        public static TextBlock StatusBlock { get; set; }
+        public static TextBlock StatusLineTL { get; set; }
+        public static TextBlock StatusLineTR { get; set; }
+        public static TextBlock ErrorBlock01 { get; set; }
         public static bool GpioDone { get => gpioDone; set => gpioDone = value; }
 
 
 
         public MainPage()
         {
+
             this.InitializeComponent();
-            StatusBlock = this.StatBlock1;
+            StatusLineTL = this.StatLine01;
+            StatusLineTR = this.StatLine02;
+            StatusLineTR = this.ErrBlock01;
             //NewTimer(500);
             Unloaded += MainPage_Unloaded;
             var cicada = new Cicada(Config.OneWing);
@@ -53,22 +59,26 @@ namespace fanOpener
             switch (selector)
             {
                 case GPIO_State.initializing:
-                    StatusBlock.Text = "initializing GPIO...";
+                    StatusLineTL.Text = "initializing GPIO...";
                     break;
                 case GPIO_State.noGpio:
-                    StatusBlock.Text = "There is no GPIO controller on this device.";
+                    StatusLineTL.Text = "There is no GPIO controller on this device.";
                     break;
                 case GPIO_State.complete:
-                    StatusBlock.Text = "GPIO pins initialized correctly.";
+                    StatusLineTL.Text = "GPIO pins initialized correctly.";
                     break;
                 default:
                     break;
             }
         }
+        /// <summary>
+        /// Adds a string with newline to the status message on the display.
+        /// </summary>
+        /// <param name="message"></param>
         public static void SetStatusMessage(string message)
         {
-            var existing = StatusBlock.Text;
-            StatusBlock.Text = existing + "\n" + message;
+            var existing = StatusLineTL.Text;
+            StatusLineTL.Text = existing + "\n" + message;
         }
 
         private void MainPage_Unloaded(object sender, object args)

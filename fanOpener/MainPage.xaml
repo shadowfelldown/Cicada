@@ -12,16 +12,17 @@
             <ColumnDefinition Width="*"  x:Name="Right"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" x:Name="StatusLine" MinHeight="44"/>
+            <RowDefinition Height="Auto" x:Name="StatusLine" MinHeight="40"/>
             <RowDefinition x:Name="Body" Height="*"/>
-            <RowDefinition Height="Auto" x:Name="Footer" MinHeight="36"/>
+            <RowDefinition Height="Auto" x:Name="Footer" MinHeight="40"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <TextBlock  x:Name="StatLine01" Text="Status Line 01" HorizontalAlignment="Left" FontSize="26.667" Width="Auto"/>
-        </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <TextBlock  x:Name="StatLine02" HorizontalAlignment="Right" Text="Status Line 02" FontSize="26.667" TextAlignment="Right"/>
-        </StackPanel>
+        <VariableSizedWrapGrid Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalChildrenAlignment="Left" Height="Auto" VerticalChildrenAlignment="Top" MaxWidth="512">
+            <TextBlock  x:Name="StatLine01" Text="Satus Line 01" FontSize="26.667" Width="Auto"/>
+        </VariableSizedWrapGrid>
+
+        <VariableSizedWrapGrid Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" HorizontalChildrenAlignment="Left" Height="Auto" VerticalChildrenAlignment="Stretch" UseLayoutRounding="False" MaxWidth="512" Width="512" FlowDirection="RightToLeft">
+            <TextBlock  x:Name="StatLine02" Text="Status Line 02" FontSize="26.667" Width="Auto"/>
+        </VariableSizedWrapGrid>
         <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,10">
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Grid.RowDefinitions>

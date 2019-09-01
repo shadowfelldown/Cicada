@@ -52,6 +52,8 @@ namespace fanOpener
                 if (controller != null)
                 {
                     initializeMotors(availableCCW, availabeCW);
+                    MainPage.GpioDone = true;
+                    MainPage.SetStatusMessage(GPIO_State.complete);
                 }
 
             }
@@ -62,17 +64,17 @@ namespace fanOpener
             controller = GpioController.GetDefault();
             if (controller == null)
             {
-                MainPage.SetGpioState(GPIO_State.noGpio);
+                MainPage.SetStatusMessage(GPIO_State.noGpio);
                 throw new ArgumentException("GPIO not found");
             }
             else if (MainPage.GpioDone == true)
             {
-                MainPage.SetGpioState(GPIO_State.complete);
+                MainPage.SetStatusMessage(GPIO_State.complete);
 
                 }
             else
             {
-                MainPage.SetGpioState(GPIO_State.initializing);
+                MainPage.SetStatusMessage(GPIO_State.initializing);
                 }
         }
         private void initializeMotors(AvailableGpioPin Pin_Motor_CCW, AvailableGpioPin Pin_Motor_CW)

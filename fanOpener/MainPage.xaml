@@ -34,7 +34,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="NoWrap"  Text="Pattern Details" TextAlignment="Right" FontSize="26.667" Margin ="10,0,10,0" />
                 <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid x:Name="LeftPatternGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
@@ -47,7 +47,7 @@
                             <TextBlock x:Name="LeftPatternString" TextWrapping="Wrap"  Text="Left Pattern Prints Here..." TextAlignment="Center" FontSize="26.667"/>
                         </StackPanel>
                     </Grid>
-                    <Grid>
+                    <Grid x:Name="RightPatternGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>

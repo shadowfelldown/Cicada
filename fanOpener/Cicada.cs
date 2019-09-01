@@ -80,14 +80,21 @@ namespace fanOpener
         }
         private void makeObjects(Config config)
         {
+            var collapsed = Windows.UI.Xaml.Visibility.Collapsed;
+            var shown = Windows.UI.Xaml.Visibility.Visible;
+
             switch (config)
             {
                 case Config.OneWing:
                     LeftWing = new Wing("left", AvailableGpioPin.GpioPin_13, AvailableGpioPin.GpioPin_12);
+                    MainPage.RightPatternVis = collapsed;
+                    MainPage.LeftPatternVis = shown;
                     break;
                 case Config.twoWings:
                     LeftWing = new Wing("left", AvailableGpioPin.GpioPin_13, AvailableGpioPin.GpioPin_12);
                     RightWing = new Wing("Right", AvailableGpioPin.GpioPin_22, AvailableGpioPin.GpioPin_23);
+                    MainPage.RightPatternVis = shown;
+                    MainPage.LeftPatternVis = shown;
                     break;
                 default:
                     break;

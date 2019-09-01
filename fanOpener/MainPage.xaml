@@ -13,20 +13,20 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" x:Name="StatusLine" MinHeight="44"/>
-            <RowDefinition x:Name="Body"/>
+            <RowDefinition x:Name="Body" Height="*"/>
             <RowDefinition Height="Auto" x:Name="Footer" MinHeight="36"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Height="36" Width="163">
-            <TextBlock  x:Name="StatLine01" Text="Status Line 01" HorizontalAlignment="Left" FontSize="26.667" />
+        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBlock  x:Name="StatLine01" Text="Status Line 01" HorizontalAlignment="Left" FontSize="26.667" Width="Auto"/>
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Height="36" Width="163">
-            <TextBlock  x:Name="StatLine02" HorizontalAlignment="Right" Text="Status Line 02" FontSize="26.667" />
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <TextBlock  x:Name="StatLine02" HorizontalAlignment="Right" Text="Status Line 02" FontSize="26.667" TextAlignment="Right"/>
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,10">
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -36,35 +36,35 @@
                 <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <Grid x:Name="LeftPatternGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="NoWrap"  Text="Left Pattern:" TextAlignment="Right" FontSize="26.667" Margin ="10,0,10,0" />
-                        <StackPanel x:Name="LeftStack" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-                            <TextBlock x:Name="LeftPatternString" TextWrapping="Wrap"  Text="Left Pattern Prints Here..." TextAlignment="Center" FontSize="26.667"/>
-                        </StackPanel>
+                        <VariableSizedWrapGrid x:Name="LeftStack" Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <TextBlock x:Name="LeftPatternString" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap"  Text="Left Pattern Prints Here..." TextAlignment="Center" FontSize="26.667" Height="Auto" />
+                        </VariableSizedWrapGrid>
                     </Grid>
                     <Grid x:Name="RightPatternGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="NoWrap"  Text="Right Pattern:" TextAlignment="Right" FontSize="26.667" Margin ="10,0,10,0" />
-                        <StackPanel x:Name="RightStack" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
-                            <TextBlock x:Name="RightPatternString" TextWrapping="Wrap"  Text="Right Pattern Prints Here..." TextAlignment="Center" FontSize="26.667"/>
-                        </StackPanel>
+                        <VariableSizedWrapGrid x:Name="RightStack" Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <TextBlock x:Name="RightPatternString" TextWrapping="Wrap"  Text="Right Pattern Prints Here..." TextAlignment="Center" FontSize="26.667" Width="Auto"/>
+                        </VariableSizedWrapGrid>
                     </Grid>
                 </StackPanel>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" >
-            <TextBlock x:Name="ErrBlock01" TextWrapping="NoWrap"  Text="Errors Print down here" TextAlignment="Left" HorizontalAlignment="Stretch" FontSize="26.667"/>
+            <TextBlock x:Name="ErrBlock01" TextWrapping="NoWrap"  Text="Errors Print down here" TextAlignment="Left" HorizontalAlignment="Stretch" FontSize="26.667" Width="Auto"/>
         </StackPanel>
     </Grid>
 </Page>

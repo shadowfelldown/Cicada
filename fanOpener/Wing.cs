@@ -14,7 +14,7 @@ namespace fanOpener
     {
         private string location;
         private int status;
-        private const int openDur = 500;
+        private const int openDur = 400;
         public static Duration shortF = new Duration(openDur / 3, "shortF");
         public static Duration mediumF = new Duration(openDur / 2, "mediumF");
         public static Duration longF= new Duration(openDur, "longF");
@@ -30,35 +30,40 @@ namespace fanOpener
         public override void Rotate(Duration duration)
         {
             {
-                if (duration == shortF)
+                if (duration.Name == "shortF")
                 {
                     pinCW.Write(GpioPinValue.High);
                     pinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep(Duration.shortF.Value);
+                    Thread.Sleep(shortF.Value);
                     //TODO: replace this sleep with
-                    pinCW.Write(GpioPinValue.High);
-                    pinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep(Duration.shortF.Value);
+                    pinCW.Write(GpioPinValue.Low);
+                    pinCCW.Write(GpioPinValue.High);
+                    Thread.Sleep(shortF.Value);
+                    ResetWing();
+                    //DEBUG//
+                    //MainPage.SetStatusMessage("GPIO PIN CW=" + pinCW.Read() + "\nPinCCW=" + pinCCW.Read());
                 }
-                if (duration == mediumF)
+                if (duration.Name == "mediumF")
                 {
                     pinCW.Write(GpioPinValue.High);
                     pinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep(Duration.mediumF.Value);
+                    Thread.Sleep(mediumF.Value);
                     //TODO: replace this sleep with
-                    pinCW.Write(GpioPinValue.High);
-                    pinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep(Duration.mediumF.Value);
+                    pinCW.Write(GpioPinValue.Low);
+                    pinCCW.Write(GpioPinValue.High);
+                    Thread.Sleep(mediumF.Value);
+                    ResetWing();
                 }
-                if (duration == longF)
+                if (duration.Name == "longF")
                 {
                     pinCW.Write(GpioPinValue.High);
                     pinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep(Duration.longF.Value);
+                    Thread.Sleep(longF.Value);
                     //TODO: replace this sleep with
-                    pinCW.Write(GpioPinValue.High);
-                    pinCCW.Write(GpioPinValue.Low);
-                    Thread.Sleep(Duration.longF.Value);
+                    pinCW.Write(GpioPinValue.Low);
+                    pinCCW.Write(GpioPinValue.High);
+                    Thread.Sleep(longF.Value);
+                    ResetWing();
                 }
                 else
                 {
@@ -69,6 +74,17 @@ namespace fanOpener
         public void flap(Duration duration)
         {
             Rotate(duration);
+        }
+        private void ResetWing()
+        {
+            if (pinCCW.Read() == GpioPinValue.High)
+            {
+                pinCCW.Write(GpioPinValue.Low);
+            }
+            if (pinCW.Read() == GpioPinValue.High)
+            {
+                pinCW.Write(GpioPinValue.Low);
+            }
         }
     }
 }

@@ -17,10 +17,10 @@
             <RowDefinition Height="Auto" x:Name="Footer" MinHeight="40"/>
         </Grid.RowDefinitions>
         <VariableSizedWrapGrid Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalChildrenAlignment="Left" Height="Auto" VerticalChildrenAlignment="Top" MaxWidth="512">
-            <TextBlock  x:Name="StatLine01" Text="Satus Line 01" FontSize="26.667" Width="Auto"/>
+            <TextBlock  x:Name="StatLine01" Text="Satus Line 01" FontSize="26.667" Width="Auto" TextWrapping="Wrap"/>
         </VariableSizedWrapGrid>
 
-        <VariableSizedWrapGrid Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" HorizontalChildrenAlignment="Left" Height="Auto" VerticalChildrenAlignment="Stretch" UseLayoutRounding="False" MaxWidth="512" Width="512" FlowDirection="RightToLeft">
+        <VariableSizedWrapGrid Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" HorizontalChildrenAlignment="Left" Height="Auto" VerticalChildrenAlignment="Top" UseLayoutRounding="False" MaxWidth="512" FlowDirection="RightToLeft">
             <TextBlock  x:Name="StatLine02" Text="Status Line 02" FontSize="26.667" Width="Auto"/>
         </VariableSizedWrapGrid>
         <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,10">

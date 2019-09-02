@@ -14,7 +14,7 @@ namespace fanOpener
     {
         private string location;
         private int status;
-        private const int openDur = 230;
+        private const int openDur = 400;
         public static Duration shortF = new Duration(openDur / 3, "shortF");
         public static Duration mediumF = new Duration(openDur / 2, "mediumF");
         public static Duration longF= new Duration(openDur, "longF");

@@ -65,13 +65,13 @@ namespace fanOpener
         private const int BIN1 = 22;
         private const int BIN2 = 23;
         public bool Enabled { get; set; }
-        public static Wing LeftWing;
-        public static Wing RightWing;
+        public Wing LeftWing;
+        public Wing RightWing;
         public BeatPattern beatPattern;
         /// <summary>
         /// Available Gpio Pins. Refer: https://ms-iot.github.io/content/en-US/win10/samples/PinMappingsRPi2.htm
         /// </summary>
-        
+
         public Cicada(Config config)
         {
             beatPattern = new BeatPattern();
@@ -86,7 +86,7 @@ namespace fanOpener
             switch (config)
             {
                 case Config.OneWing:
-                    LeftWing = new Wing("left", AvailableGpioPin.GpioPin_13, AvailableGpioPin.GpioPin_12);
+                    LeftWing = new Wing("left", AvailableGpioPin.GpioPin_12, AvailableGpioPin.GpioPin_13);
                     MainPage.RightPattGrid.Visibility = collapsed;
                     MainPage.LeftPattGrid.Visibility = shown;
                     break;

@@ -87,14 +87,14 @@ namespace fanOpener
             {
                 case Config.OneWing:
                     LeftWing = new Wing("left", AvailableGpioPin.GpioPin_13, AvailableGpioPin.GpioPin_12);
-                    MainPage.RightPatternVis = collapsed;
-                    MainPage.LeftPatternVis = shown;
+                    MainPage.RightPattGrid.Visibility = collapsed;
+                    MainPage.LeftPattGrid.Visibility = shown;
                     break;
                 case Config.twoWings:
                     LeftWing = new Wing("left", AvailableGpioPin.GpioPin_13, AvailableGpioPin.GpioPin_12);
                     RightWing = new Wing("Right", AvailableGpioPin.GpioPin_22, AvailableGpioPin.GpioPin_23);
-                    MainPage.RightPatternVis = shown;
-                    MainPage.LeftPatternVis = shown;
+                    MainPage.RightPattGrid.Visibility = shown;
+                    MainPage.LeftPattGrid.Visibility = shown;
                     break;
                 default:
                     break;

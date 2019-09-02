@@ -22,7 +22,7 @@ namespace fanOpener
                 //PrintArray(pattern);
                 return pattern;
             }
-            private void PlayPattern(int[,] pattern)
+            private void PlayPattern(Wing Left, Wing Right, int[,] pattern)
             {
                 for (int i = 0; i < pattern.Length; i++)
                 {
@@ -31,13 +31,13 @@ namespace fanOpener
                     switch (pattern[i, 0])
                     {
                         case 1:
-                            Cicada.LeftWing.flap(Wing.shortF);
+                            Left.flap(Wing.shortF);
                             break;
                         case 2:
-                            Cicada.LeftWing.flap(Wing.mediumF);
+                            Left.flap(Wing.mediumF);
                             break;
                         case 3:
-                            Cicada.LeftWing.flap(Wing.longF);
+                            Left.flap(Wing.longF);
                             break;
                         default:
                             break;
@@ -49,13 +49,13 @@ namespace fanOpener
                         switch (pattern[i, 0])
                         {
                         case 1:
-                            Cicada.RightWing.flap(Wing.shortF);
+                            Right.flap(Wing.shortF);
                             break;
                         case 2:
-                            Cicada.RightWing.flap(Wing.mediumF);
+                            Right.flap(Wing.mediumF);
                             break;
                         case 3:
-                            Cicada.RightWing.flap(Wing.longF);
+                            Right.flap(Wing.longF);
                             break;
                         default:
                             break;
@@ -66,16 +66,16 @@ namespace fanOpener
                         switch (pattern[i, 0])
                         {
                             case 1:
-                                Cicada.RightWing.flap(Wing.shortF);
-                                Cicada.LeftWing.flap(Wing.shortF);
+                                Right.flap(Wing.shortF);
+                                Left.flap(Wing.shortF);
                                 break;
                             case 2:
-                                Cicada.RightWing.flap(Wing.mediumF);
-                                Cicada.LeftWing.flap(Wing.mediumF);
+                                Right.flap(Wing.mediumF);
+                                Left.flap(Wing.mediumF);
                                 break;
                             case 3:
-                                Cicada.RightWing.flap(Wing.longF);
-                                Cicada.LeftWing.flap(Wing.longF);
+                                Right.flap(Wing.longF);
+                                Left.flap(Wing.longF);
                                 break;
                             default:
                                 break;

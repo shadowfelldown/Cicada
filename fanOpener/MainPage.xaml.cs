@@ -31,6 +31,7 @@ namespace fanOpener
         private const int PB_PIN = 5;
         private const int patOptions = 3;
         private static bool gpioDone;
+        private Cicada _Cicada;
         public static TextBlock StatusLineTL { get; set; }
         public static TextBlock StatusLineTR { get; set; }
         public static Grid LeftPattGrid { get; set; }
@@ -53,8 +54,8 @@ namespace fanOpener
             var LeftPattern = this.LeftPatternString;
             //NewTimer(500);
             Unloaded += MainPage_Unloaded;
-            var cicada = new Cicada(Config.OneWing);
-
+            _Cicada = new Cicada(Config.OneWing);
+            _Cicada.LeftWing.Rotate(Duration.longF);
             //InitGPIO();
             //Generate_Pattern(Pattern);
             //PrintArray(Pattern);
@@ -110,6 +111,21 @@ namespace fanOpener
             }
 
             LeftPatternString.Text = Sb.ToString();
+        }
+
+        private void LeftLongF_Click(object sender, RoutedEventArgs e)
+        {
+            _Cicada.LeftWing.Rotate(Duration.longF);
+        }
+
+        private void LeftMediumF_Click(object sender, RoutedEventArgs e)
+        {
+            _Cicada.LeftWing.Rotate(Duration.mediumF);
+        }
+
+        private void LeftShortF_Click(object sender, RoutedEventArgs e)
+        {
+            _Cicada.LeftWing.Rotate(Duration.shortF);
         }
     }
 }

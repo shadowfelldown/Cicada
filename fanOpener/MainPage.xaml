@@ -61,6 +61,9 @@
                             <TextBlock x:Name="RightPatternString" TextWrapping="Wrap"  Text="Right Pattern Prints Here..." TextAlignment="Center" FontSize="26.667" Width="Auto"/>
                         </VariableSizedWrapGrid>
                     </Grid>
+                    <Button x:Name="LeftLongF" Click="LeftLongF_Click" Content="LongF" RequestedTheme="Default" Width="200" Height="40" HorizontalAlignment="Center" Margin="0,20,0,0" />
+                    <Button x:Name="LeftMediumF" Click="LeftMediumF_Click" Content="MediumF" RequestedTheme="Default" Width="200" Height="40" HorizontalAlignment="Center" Margin="0,20,0,0" />
+                    <Button x:Name="LeftShortF" Click="LeftShortF_Click" Content="ShortF" RequestedTheme="Default" Width="200" Height="40" HorizontalAlignment="Center" Margin="0,20,0,0" />
                 </StackPanel>
             </Grid>
         </StackPanel>
